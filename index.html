@@ -44,25 +44,25 @@
                        Explore my website and witness how my dedication and unique path have shaped my career in the dynamic realm of software engineering. </p>
 
                        <div class="tab-titles">
-                            <p class="tab-links active-link">Skills</p>
-                            <p class="tab-links">Experience</p>
-                            <p class="tab-links">Education</p>
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
                        </div>
-                       <div class="tab-contents">
+                       <div class="tab-contents active-tab" id="skills">
                         <ul>
                             <li><span>Front-End Development</span> <br> Creating a user interface that is attractive and interactive, combining coding skills and design to deliver a visually appealing and functional digital experience.</li>
                             <li><span>Back-End Development</span> <br> Building and maintaining server-side logic and infrastructure behind the scenes to provide optimal functionality, powering the front-end and ensuring the smooth operation of the entire system.</li>
                             <li><span>Soft Skills</span> <br> My strong leadership, communication, and problem-solving skills acquired from running a shipbuilding business will translate well into programming, as I can effectively collaborate with teams, convey complex ideas, and find innovative solutions to challenges.</li>
                         </ul>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents" id="experience">
                         <ul>
                             <li><span>2019 - 2023</span> <br> Leading Supervisor and First Hand at Spartan Marine </li>
                             <li><span>2023 - 2024</span> <br> Experienced in-depth software engineering training and project development at Flatiron Bootcamp, where I acquired a comprehensive skill set. Proficient in full-stack web development, with expertise in agile methodologies and collaborative project delivery within diverse teams.</li>
                             <li><span>2024 - current</span> <br> Extensive freelance experience building websites and programs for diverse businesses, leveraging my expertise in web development, programming, and tailored solutions to deliver high-quality results. </li>
                         </ul>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents" id="education">
                         <ul>
                             <li><span>Front-End Development</span> <br> Creating a user interface that is attractive and interactive, combining coding skills and design to deliver a visually appealing and functional digital experience.</li>
                             <li><span>Back-End Development</span> <br> Building and maintaining server-side logic and infrastructure behind the scenes to provide optimal functionality, powering the front-end and ensuring the smooth operation of the entire system.</li>
@@ -70,9 +70,49 @@
                         </ul>
                     </div>
                 </div>
+            </div> 
+        </div>
+    </div>
+    <!------------services-------------->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <h2>Web Design</h2>
+                    <p>Web design is the process of creating visually appealing and user-friendly websites to enhance online experiences.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div>
+                    <h2>UI/UX Design</h2>
+                    <p>Web design is the process of creating visually appealing and user-friendly websites to enhance online experiences.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div>
+                    <h2>App Design</h2>
+                    <p>Web design is the process of creating visually appealing and user-friendly websites to enhance online experiences.</p>
+                    <a href="#">Learn More</a>
+                </div>
             </div>
         </div>
     </div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname) {
+        for(tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+
+</script>
 
 
     </body>
